@@ -1,0 +1,20 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+.line{
+    background-color: grey;
+}
+
+.casella{
+    border: 1px solid black;
+    font-weight: 500;
+}

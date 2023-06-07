@@ -40,8 +40,6 @@ $hotels = [
 
 ];
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -55,9 +53,8 @@ $hotels = [
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
         crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"
-        defer></script>
+    <link rel="stylesheet" href="./assets/style.css">
+
     <title>Document</title>
 </head>
 
@@ -66,35 +63,67 @@ $hotels = [
 
 
 <body>
-    <div class="container">
+    <div class="container my-3">
+        <h1>PHP Hotel</h1>
+        <form action="" method="get" class="py-3 d-flex">
+            <div class="me-4">
+                <h4>Cerca parcheggio nell'Hotel</h4>
+                <select class="form-select w-100 mb-3" aria-label="Default select example">
+                    <option selected>Tutti</option>
+                    <option value="1">Con Parcheggio</option>
+                    <option value="2">Senza Parcheggio</option>
+                </select>
+            </div>
+            <div>
+                <h4>Cerca Hotel in base al voto</h4>
+                <select class="form-select w-50 mb-3" aria-label="Default select example">
+                    <option selected>Tutti</option>
+                    <option value="1">Voto 1</option>
+                    <option value="2">Voto 2</option>
+                    <option value="3">Voto 3</option>
+                    <option value="4">Voto 4</option>
+                    <option value="5">Voto 5</option>
+                </select>
+            </div>
+        </form>
+
+
+
+
+
+        <h4>Lista Hotel</h4>
         <table>
             <thead>
-                <tr>
+                <tr class="title">
                     <th>Nome</th>
                     <th>Descrizione</th>
                     <th>Parcheggio</th>
                     <th>Voto</th>
                     <th>Distanza dal centro</th>
                 </tr>
-
             </thead>
             <tbody>
                 <?php
+
+                $parking = true;
+                $parking = false;
+
                 foreach ($hotels as $hotel) { ?>
-                    <tr>
-                        <td>
+                    <tr class=" line">
+                        <td class="casella px-1 w-25">
                             <?= $hotel['name'] ?>
                         </td>
-                        <td>
+                        <td class="casella px-1 w-50">
                             <?= $hotel['description'] ?>
                         </td>
-                        <td>
+
+                        <td class="casella px-1">
                             <?= $hotel['parking'] ?>
                         </td>
-                        <td>
+                        <td class="casella px-1">
                             <?= $hotel['vote'] ?>
                         </td>
-                        <td>
+                        <td class="casella px-1">
                             <?= $hotel['distance_to_center'] ?>
                         </td>
                     </tr>
@@ -107,7 +136,9 @@ $hotels = [
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
